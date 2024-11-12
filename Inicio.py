@@ -47,7 +47,7 @@ uploaded_file = st.file_uploader('Seleccione archivo CSV', type=['csv'])
 if uploaded_file is not None:
     try:
         # Load and process data
-        df1 = pd.read_csv(uploaded_file)
+        df1 = pd.read_csv(uploaded_file, delimiter=";")
         
         # Renombrar columnas para simplificar
         column_mapping = {
