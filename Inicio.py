@@ -46,8 +46,14 @@ uploaded_file = st.file_uploader('Seleccione archivo CSV', type=['csv'])
 
 if uploaded_file is not None:
     try:
-        # Load and process data
-        df1 = pd.read_csv(uploaded_file, delimiter=";")
+        df1 = pd.read_csv(uploaded_file, delimiter=';')
+        
+        # Renombrar columnas para simplificar, ajustando nombres según el archivo actual
+        column_mapping = {
+            'time': 'time',
+            'humedad': 'humedad'
+        }
+        df1 = df1.rename(columns=column_mapping)
         
         # Renombrar columnas para simplificar
         column_mapping = {
