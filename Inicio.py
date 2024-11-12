@@ -62,8 +62,8 @@ if uploaded_file is not None:
         }
         df1 = df1.rename(columns=column_mapping)
         
-        df1['Time'] = pd.to_datetime(df1['Time'])
-        df1 = df1.set_index('Time')
+        df1['time'] = pd.to_datetime(df1['time'])
+        df1 = df1.set_index('time')
 
         # Create tabs for different analyses
         tab1, tab2, tab3, tab4 = st.tabs(["📈 Visualización", "📊 Estadísticas", "🔍 Filtros", "🗺️ Información del Sitio"])
